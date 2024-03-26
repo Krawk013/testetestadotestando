@@ -13,5 +13,7 @@ forwardButton.addEventListener('click', () => {
 });
 
 goButton.addEventListener('click', () => {
-    contentFrame.src = urlInput.value;
+    const searchTerm = encodeURIComponent(urlInput.value.trim());
+    const searchUrl = `https://www.google.com/search?q=${searchTerm}`;
+    contentFrame.src = searchUrl;
 });
